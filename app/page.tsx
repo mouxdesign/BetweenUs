@@ -78,7 +78,7 @@ export default function HomePage() {
           {/* Right portrait — Image1 */}
           <div className="relative min-h-[400px] bg-[#E8E5DE] overflow-hidden">
             <Image
-              src="/images/temp/Image1.png"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80&fit=crop"
               alt="Between Us vision"
               fill
               className="object-cover object-top grayscale"
