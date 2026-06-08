@@ -58,7 +58,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Vision split ────────────────────────────────────────────────── */}
-      <section className="bg-[#F2F0EB] px-6 lg:px-10 pb-20 md:pb-28">
+      <section className="bg-white px-6 lg:px-10 pb-20 md:pb-28">
         <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left card */}
           <div className="bg-white px-12 md:px-16 py-14 md:py-20 flex flex-col justify-between min-h-[480px]">
@@ -88,7 +88,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Story Bank ──────────────────────────────────────────────────── */}
-      <section className="bg-white px-6 lg:px-10 py-20 md:py-28">
+      <section className="bg-[#F2F0EB] px-6 lg:px-10 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="flex justify-center mb-14">
             <span className="border border-[#1A1A18] text-[#1A1A18] text-xs uppercase tracking-[0.2em] px-5 py-2 rounded-full">
