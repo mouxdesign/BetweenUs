@@ -11,7 +11,7 @@ export default function AboutPage() {
         {/* Header */}
         <div className="max-w-3xl mb-20">
           <p className="text-xs uppercase tracking-[0.2em] text-[#888884] mb-6">The Origin</p>
-          <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-[#1A1A18] leading-tight">
+          <h1 className="font-display font-bold text-[#1A1A18] leading-tight" style={{ fontSize: 'clamp(2.2rem, 6vw, 7rem)' }}>
             We started asking questions.
           </h1>
           <p className="font-sans italic text-2xl md:text-3xl text-[#3D3D3A] mt-4">
