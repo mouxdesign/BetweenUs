@@ -21,7 +21,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className="w-full bg-[#F2F0EB] border-b border-[#E8E5DE]">
+    <nav className="w-full bg-[#F2F0EB] border-b border-[#E8E5DE] relative z-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex h-14 items-center justify-between">
 
@@ -60,7 +60,7 @@ export default function NavBar() {
                 </svg>
               </button>
               {applyOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-44 bg-[#F2F0EB] border border-[#E8E5DE] shadow-sm">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-44 bg-[#F2F0EB] border border-[#E8E5DE] shadow-md z-50">
                   <Link
                     href="/apply/bitcoin"
                     className="block px-5 py-3 text-sm text-[#1A1A18] hover:bg-[#E8E5DE] transition-colors"
