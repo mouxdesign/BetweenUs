@@ -75,13 +75,13 @@ export default function HomePage() {
               </svg>
             </Link>
           </div>
-          {/* Right portrait */}
+          {/* Right portrait — Image1 */}
           <div className="relative min-h-[400px] bg-[#E8E5DE] overflow-hidden">
             <Image
-              src={getImageKitUrl(posts[1]?.coverImage ?? "between-us/vision-placeholder", { width: 700, height: 500 })}
+              src="/images/temp/Image1.png"
               alt="Between Us vision"
               fill
-              className="object-cover grayscale"
+              className="object-cover object-top grayscale"
             />
           </div>
         </div>

@@ -2,8 +2,8 @@ export function getImageKitUrl(
   path: string,
   options?: { width?: number; height?: number; quality?: number }
 ): string {
-  // Pass through full URLs (e.g. Unsplash placeholders) unchanged
-  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  // Pass through full URLs and local paths unchanged
+  if (path.startsWith("http://") || path.startsWith("https://") || path.startsWith("/")) return path;
 
   const endpoint = process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT ?? "";
   const { width, height, quality = 80 } = options ?? {};
