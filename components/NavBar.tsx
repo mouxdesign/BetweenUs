@@ -27,7 +27,7 @@ export default function NavBar() {
 
           {/* Brand lockup — single SVG containing icon + wordmark */}
           <Link href="/" className="shrink-0">
-            <Image src="/images/logo.svg" alt="Between Us" width={200} height={24} />
+            <Image src="/images/logo.svg" alt="Between Us" width={224} height={24} />
           </Link>
 
           {/* Desktop centre nav */}
