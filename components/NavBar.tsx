@@ -4,8 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-// TODO: Replace logo.svg with the exported SVG logo from Figma
-
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [applyOpen, setApplyOpen] = useState(false);
@@ -16,7 +14,7 @@ export default function NavBar() {
         <div className="flex h-16 items-center justify-between">
           {/* Brand lockup */}
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/logo.svg" alt="Between Us logo" width={32} height={32} />
+            <Image src="/images/logo.svg" alt="Between Us logo" width={44} height={30} />
             <span className="font-display text-xl font-medium tracking-tight text-gray-900">
               Between Us
             </span>
