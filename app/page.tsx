@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="absolute inset-y-0 right-0 w-1/2 md:w-[52%]">
           <div className="relative w-full h-full min-h-[70vh]">
             <Image
-              src={getImageKitUrl(posts[0]?.coverImage ?? "between-us/hero-placeholder", { width: 900 })}
+              src="/images/temp/Hero.jpg"
               alt="Between Us hero"
               fill
               className="object-cover object-center"
