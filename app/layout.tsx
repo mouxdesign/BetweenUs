@@ -4,11 +4,12 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
+// Cormorant Garamond is used as fallback for Räder weights not yet available
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-display",
+  variable: "--font-display-fallback",
   display: "swap",
 });
 
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable} h-full antialiased`}>
-      <body className="flex flex-col min-h-screen bg-white text-gray-900">
+      <body className="flex flex-col min-h-screen bg-[#F2F0EB] text-[#1A1A18]">
         <NavBar />
         <div className="flex-1">{children}</div>
         <Footer />

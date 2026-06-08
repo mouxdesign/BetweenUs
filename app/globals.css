@@ -1,7 +1,16 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Font variables injected by next/font in layout.tsx */
+/* ─── Räder (Pangram Pangram) — Bold weight ──────────────────────────────── */
+/* Additional weights will be added as font files are provided.               */
+/* Remaining weights fall back to Cormorant Garamond loaded via next/font.    */
+@font-face {
+  font-family: "Rader";
+  src: url("/fonts/rader/Rader-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --color-cream: #F2F0EB;
@@ -13,7 +22,8 @@
 }
 
 @theme inline {
-  --font-display: var(--font-display);
+  /* Räder first, Cormorant Garamond (from next/font) as fallback */
+  --font-display: "Rader", var(--font-display-fallback), Georgia, serif;
   --font-sans: var(--font-sans);
 
   --color-cream: var(--color-cream);
