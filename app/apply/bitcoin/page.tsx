@@ -51,7 +51,7 @@ export default function ApplyBitcoinPage() {
       <section className="bg-[#1A1A18] px-6 lg:px-10 py-24 md:py-36">
         <div className="mx-auto max-w-4xl">
           <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-8">Bitcoin Stories</p>
-          <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05]">
+          <h1 className="font-display font-bold text-white leading-[1.05]" style={{ fontSize: 'clamp(2.2rem, 6vw, 7rem)' }}>
             The most important bitcoin stories have never been told.
           </h1>
         </div>
