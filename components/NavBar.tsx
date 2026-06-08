@@ -25,12 +25,9 @@ export default function NavBar() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex h-14 items-center justify-between">
 
-          {/* Brand */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <Image src="/images/logo.svg" alt="Between Us logo" width={26} height={28} />
-            <span className="font-display font-bold text-xl text-[#1A1A18] tracking-tight leading-none">
-              Between Us.
-            </span>
+          {/* Brand lockup — single SVG containing icon + wordmark */}
+          <Link href="/" className="shrink-0">
+            <Image src="/images/logo.svg" alt="Between Us" width={200} height={24} />
           </Link>
 
           {/* Desktop centre nav */}
