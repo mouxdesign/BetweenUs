@@ -1,31 +1,11 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* ─── Räder (Pangram Pangram) — display/headings ─────────────────────────── */
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-Hairline.woff2") format("woff2"); font-weight: 100; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-HairlineItalic.woff2") format("woff2"); font-weight: 100; font-style: italic; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-Thin.woff2") format("woff2"); font-weight: 200; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-ThinItalic.woff2") format("woff2"); font-weight: 200; font-style: italic; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-Extralight.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-ExtralightItalic.woff2") format("woff2"); font-weight: 300; font-style: italic; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-Light.woff2") format("woff2"); font-weight: 350; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-LightItalic.woff2") format("woff2"); font-weight: 350; font-style: italic; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-RegularItalic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-MediumItalic.woff2") format("woff2"); font-weight: 500; font-style: italic; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-Semibold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-SemiboldItalic.woff2") format("woff2"); font-weight: 600; font-style: italic; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rader"; src: url("/fonts/rader/Rader-BoldItalic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
-
-/* ─── Aktiv Grotesk (Dalton Maag) — body copy ────────────────────────────── */
-@font-face { font-family: "AktivGrotesk"; src: url("/fonts/aktiv-grotesk/AktivGrotesk-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "AktivGrotesk"; src: url("/fonts/aktiv-grotesk/AktivGrotesk-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "AktivGrotesk"; src: url("/fonts/aktiv-grotesk/AktivGrotesk-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: "AktivGrotesk"; src: url("/fonts/aktiv-grotesk/AktivGrotesk-MediumItalic.woff2") format("woff2"); font-weight: 500; font-style: italic; font-display: swap; }
-@font-face { font-family: "AktivGrotesk"; src: url("/fonts/aktiv-grotesk/AktivGrotesk-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "AktivGrotesk"; src: url("/fonts/aktiv-grotesk/AktivGrotesk-BoldItalic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+/* Font variables are injected by next/font via layout.tsx:
+   --font-display → Cormorant Garamond (headings)
+   --font-sans    → Inter (body copy)
+   These @font-face blocks will be replaced with the purchased
+   Räder and Aktiv Grotesk files when the fonts are ready. */
 
 :root {
   --background: #ffffff;
@@ -35,8 +15,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-display: "Rader", Georgia, serif;
-  --font-sans: "AktivGrotesk", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
 }
 
 body {
