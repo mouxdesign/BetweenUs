@@ -58,7 +58,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Vision split ────────────────────────────────────────────────── */}
-      <section className="bg-[#1A1A18] px-6 lg:px-10 pb-20 md:pb-28">
+      <section className="bg-[#1A1A18] px-6 lg:px-10">
         <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left card */}
           <div className="bg-[#1A1A18] px-12 md:px-16 py-14 md:py-20 flex flex-col justify-between min-h-[480px]">
