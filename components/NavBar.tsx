@@ -6,76 +6,62 @@ import Image from "next/image";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [applyOpen, setApplyOpen] = useState(false);
 
   return (
-    <nav className="w-full border-b border-gray-200 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Brand lockup */}
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/logo.svg" alt="Between Us logo" width={44} height={30} />
-            <span className="font-display text-xl font-medium tracking-tight text-gray-900">
-              Between Us
+    <nav className="w-full bg-[#F2F0EB] border-b border-[#E8E5DE]">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="flex h-14 items-center justify-between">
+
+          {/* Brand */}
+          <Link href="/" className="flex items-center gap-2.5 shrink-0">
+            <Image src="/images/logo.svg" alt="Between Us logo" width={28} height={19} />
+            <span className="font-display font-bold text-xl text-[#1A1A18] tracking-tight leading-none">
+              Between Us.
             </span>
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex md:items-center md:gap-8">
-            <Link href="/" className="text-sm text-gray-700 hover:text-gray-900 transition-colors">
-              Home
+          {/* Desktop centre nav */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+            <Link href="/blog" className="text-sm text-[#1A1A18] hover:opacity-60 transition-opacity">
+              Stories
             </Link>
-            <Link href="/blog" className="text-sm text-gray-700 hover:text-gray-900 transition-colors">
-              Blog
-            </Link>
-            <Link href="/about" className="text-sm text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/about" className="text-sm text-[#1A1A18] hover:opacity-60 transition-opacity">
               About
             </Link>
-            {/* Apply dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setApplyOpen(!applyOpen)}
-                className="flex items-center gap-1 text-sm text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                Apply
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {applyOpen && (
-                <div className="absolute right-0 top-full mt-2 w-44 rounded border border-gray-100 bg-white shadow-lg">
-                  <Link
-                    href="/apply/bitcoin"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                    onClick={() => setApplyOpen(false)}
-                  >
-                    Apply: Bitcoin
-                  </Link>
-                  <Link
-                    href="/apply/ai"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                    onClick={() => setApplyOpen(false)}
-                  >
-                    Apply: AI
-                  </Link>
-                </div>
-              )}
-            </div>
+            <Link href="/apply/bitcoin" className="text-sm text-[#1A1A18] hover:opacity-60 transition-opacity">
+              Submit
+            </Link>
+          </div>
+
+          {/* Desktop right */}
+          <div className="hidden md:flex items-center gap-4">
+            <button aria-label="Search" className="text-[#1A1A18] hover:opacity-60 transition-opacity p-1">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <circle cx="11" cy="11" r="7" />
+                <path strokeLinecap="round" d="M16.5 16.5l4 4" />
+              </svg>
+            </button>
+            <Link
+              href="/apply/bitcoin"
+              className="bg-[#1A1A18] text-white text-sm font-medium px-4 py-2 rounded-full hover:opacity-80 transition-opacity"
+            >
+              Subscribe
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 text-gray-700"
+            className="md:hidden p-2 text-[#1A1A18]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
             {menuOpen ? (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
@@ -84,15 +70,17 @@ export default function NavBar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-3">
-          <Link href="/" className="block text-sm text-gray-700" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/blog" className="block text-sm text-gray-700" onClick={() => setMenuOpen(false)}>Blog</Link>
-          <Link href="/about" className="block text-sm text-gray-700" onClick={() => setMenuOpen(false)}>About</Link>
-          <div className="space-y-2 pl-2 border-l border-gray-200">
-            <p className="text-xs uppercase tracking-widest text-gray-400">Apply</p>
-            <Link href="/apply/bitcoin" className="block text-sm text-gray-700" onClick={() => setMenuOpen(false)}>Apply: Bitcoin</Link>
-            <Link href="/apply/ai" className="block text-sm text-gray-700" onClick={() => setMenuOpen(false)}>Apply: AI</Link>
-          </div>
+        <div className="md:hidden border-t border-[#E8E5DE] bg-[#F2F0EB] px-6 py-5 space-y-4">
+          <Link href="/blog" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>Stories</Link>
+          <Link href="/about" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link href="/apply/bitcoin" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>Submit</Link>
+          <Link
+            href="/apply/bitcoin"
+            className="inline-block bg-[#1A1A18] text-white text-sm font-medium px-5 py-2.5 rounded-full mt-2"
+            onClick={() => setMenuOpen(false)}
+          >
+            Subscribe
+          </Link>
         </div>
       )}
     </nav>

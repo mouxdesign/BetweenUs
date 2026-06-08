@@ -9,6 +9,8 @@ export interface PostFrontmatter {
   date: string;
   author: string;
   excerpt: string;
+  pullQuote?: string;
+  subject?: string;
   coverImage: string;
   tags: string[];
   geography: string[];

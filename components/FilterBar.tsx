@@ -31,7 +31,7 @@ export default function FilterBar({ geographies, useCases, active }: FilterBarPr
       <select
         value={active.useCase ?? ""}
         onChange={(e) => setFilter("useCase", e.target.value)}
-        className="rounded border border-gray-200 px-3 py-2 text-sm text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-gray-300"
+        className="border border-[#1A1A18] bg-transparent text-xs uppercase tracking-[0.1em] text-[#1A1A18] px-4 py-2 outline-none"
       >
         <option value="">All topics</option>
         {useCases.map((uc) => (
@@ -41,7 +41,7 @@ export default function FilterBar({ geographies, useCases, active }: FilterBarPr
       <select
         value={active.geography ?? ""}
         onChange={(e) => setFilter("geography", e.target.value)}
-        className="rounded border border-gray-200 px-3 py-2 text-sm text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-gray-300"
+        className="border border-[#1A1A18] bg-transparent text-xs uppercase tracking-[0.1em] text-[#1A1A18] px-4 py-2 outline-none"
       >
         <option value="">All locations</option>
         {geographies.map((g) => (
@@ -51,9 +51,9 @@ export default function FilterBar({ geographies, useCases, active }: FilterBarPr
       {hasActive && (
         <button
           onClick={clearFilters}
-          className="text-sm text-gray-400 hover:text-gray-700 transition-colors underline"
+          className="text-xs uppercase tracking-[0.1em] text-[#888884] hover:text-[#1A1A18] transition-colors"
         >
-          Clear filters
+          Clear
         </button>
       )}
     </div>

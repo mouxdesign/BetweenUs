@@ -1,41 +1,50 @@
 import Image from "next/image";
-import TagBadge from "./TagBadge";
 import { getImageKitUrl } from "@/lib/imagekit";
 import type { Post } from "@/lib/posts";
 
 export default function PostHeader({ post }: { post: Post }) {
-  const imageUrl = getImageKitUrl(post.coverImage, { width: 1600, height: 700 });
+  const imageUrl = getImageKitUrl(post.coverImage, { width: 900, height: 1100 });
 
   return (
-    <header className="w-full">
-      <div className="relative w-full aspect-[21/9] bg-gray-100">
-        <Image
-          src={imageUrl}
-          alt={post.title}
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-      </div>
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 pt-10 pb-6">
-        <div className="flex flex-wrap gap-2 mb-4">
-          {post.useCase.map((uc) => <TagBadge key={uc} label={uc} type="useCase" />)}
-          {post.geography.map((g) => <TagBadge key={g} label={g} type="geography" />)}
+    <header className="bg-[#F2F0EB]">
+      {/* Split hero */}
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[85vh]">
+
+        {/* Left — tags + pull quote */}
+        <div className="flex flex-col justify-between px-8 md:px-14 lg:px-20 py-14 md:py-20">
+          {/* Tags */}
+          <div className="space-y-1 mb-10">
+            {post.tags.slice(0, 2).map((tag) => (
+              <p key={tag} className="text-xs uppercase tracking-[0.15em] text-[#888884]">{tag}</p>
+            ))}
+          </div>
+
+          {/* Massive pull quote */}
+          <div className="flex-1 flex items-center">
+            {post.pullQuote ? (
+              <blockquote className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-[#1A1A18] leading-[1.1]">
+                &ldquo;{post.pullQuote}&rdquo;
+              </blockquote>
+            ) : (
+              <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-[#1A1A18] leading-[1.1]">
+                {post.title}
+              </h1>
+            )}
+          </div>
+
+          {/* Spacer at bottom for balance */}
+          <div className="mt-10" />
         </div>
-        <h1 className="font-display text-4xl md:text-5xl font-semibold text-gray-900 leading-tight mb-4">
-          {post.title}
-        </h1>
-        <p className="text-lg text-gray-600 leading-relaxed mb-6">{post.excerpt}</p>
-        <div className="flex items-center gap-2 text-sm text-gray-500 border-t border-gray-100 pt-4">
-          <span className="font-medium text-gray-700">{post.author}</span>
-          <span>·</span>
-          <time dateTime={post.date}>
-            {new Date(post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
-          </time>
-        </div>
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {post.tags.map((tag) => <TagBadge key={tag} label={tag} type="tag" />)}
+
+        {/* Right — full portrait photo */}
+        <div className="relative min-h-[60vw] md:min-h-0 bg-[#E8E5DE]">
+          <Image
+            src={imageUrl}
+            alt={post.title}
+            fill
+            className="object-cover object-center grayscale"
+            priority
+          />
         </div>
       </div>
     </header>

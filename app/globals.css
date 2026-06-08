@@ -1,26 +1,35 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Font variables are injected by next/font via layout.tsx:
-   --font-display → Cormorant Garamond (headings)
-   --font-sans    → Inter (body copy)
-   These @font-face blocks will be replaced with the purchased
-   Räder and Aktiv Grotesk files when the fonts are ready. */
+/* Font variables injected by next/font in layout.tsx */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-cream: #F2F0EB;
+  --color-cream-dark: #E8E5DE;
+  --color-ink: #1A1A18;
+  --color-ink-light: #3D3D3A;
+  --color-muted: #888884;
+  --color-white: #FFFFFF;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
+
+  --color-cream: var(--color-cream);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-ink: var(--color-ink);
+  --color-ink-light: var(--color-ink-light);
+  --color-muted: var(--color-muted);
+}
+
+html {
+  background: var(--color-cream);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-cream);
+  color: var(--color-ink);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
