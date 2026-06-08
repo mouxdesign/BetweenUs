@@ -59,15 +59,15 @@ export default function HomePage() {
 
       {/* ── Vision split ────────────────────────────────────────────────── */}
       <section className="bg-[#F2F0EB] px-6 lg:px-10 pb-20 md:pb-28">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left card */}
-          <div className="bg-white p-10 md:p-14 flex flex-col justify-between min-h-[400px]">
-            <p className="font-display font-bold text-3xl md:text-4xl text-[#1A1A18] leading-tight">
+          <div className="bg-white px-12 md:px-16 py-14 md:py-20 flex flex-col justify-between min-h-[480px]">
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-[#1A1A18] leading-[1.1]">
               We started asking questions. Now we can&apos;t stop.
-            </p>
+            </h2>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-[#1A1A18] hover:opacity-60 transition-opacity mt-10"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-[#1A1A18] hover:opacity-60 transition-opacity"
             >
               Read our vision
               <svg width="14" height="10" fill="none" viewBox="0 0 14 10">
@@ -75,13 +75,13 @@ export default function HomePage() {
               </svg>
             </Link>
           </div>
-          {/* Right portrait — Image1 */}
-          <div className="relative min-h-[400px] bg-[#E8E5DE] overflow-hidden">
+          {/* Right portrait */}
+          <div className="relative min-h-[480px] bg-[#E8E5DE] overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80&fit=crop"
               alt="Between Us vision"
               fill
-              className="object-cover object-top grayscale"
+              className="object-cover object-center grayscale"
             />
           </div>
         </div>

@@ -29,8 +29,8 @@
 }
 
 @theme inline {
-  --font-display: "Rader", var(--font-display-fallback), Georgia, serif;
-  --font-sans: "Frama", var(--font-sans-fallback), Helvetica, Arial, sans-serif;
+  --font-display: "Rader", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Frama", Inter, Helvetica, Arial, sans-serif;
 
   --color-cream: var(--color-cream);
   --color-cream-dark: var(--color-cream-dark);
