@@ -6,11 +6,6 @@ export const metadata = {
 };
 
 export default function ApplyAIPage() {
-  // TODO: Replace with real Tally form URL for AI stories
-  return (
-    <ApplyPageTemplate
-      topic="AI"
-      tallyUrl="https://tally.so/placeholder-ai"
-    />
-  );
+  // TODO: Add Tally form URL for AI stories when ready
+  return <ApplyPageTemplate topic="AI" />;
 }

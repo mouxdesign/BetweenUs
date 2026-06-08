@@ -1,6 +1,6 @@
 interface ApplyPageTemplateProps {
   topic: "Bitcoin" | "AI";
-  tallyUrl: string;
+  tallyUrl?: string;
 }
 
 export default function ApplyPageTemplate({ topic, tallyUrl }: ApplyPageTemplateProps) {
@@ -18,14 +18,23 @@ export default function ApplyPageTemplate({ topic, tallyUrl }: ApplyPageTemplate
       <p className="text-base text-gray-500 leading-relaxed mb-10">
         You do not need to be a writer. You need to have lived something worth telling. Our editors will work with you to shape the piece. There is no fee to submit, and contributors are paid a flat rate on publication.
       </p>
-      <a
-        href={tallyUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block bg-gray-900 text-white font-medium px-8 py-4 rounded hover:bg-gray-700 transition-colors text-base"
-      >
-        Apply Now
-      </a>
+      {tallyUrl ? (
+        <a
+          href={tallyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-gray-900 text-white font-medium px-8 py-4 rounded hover:bg-gray-700 transition-colors text-base"
+        >
+          Apply Now
+        </a>
+      ) : (
+        <button
+          disabled
+          className="inline-block bg-gray-200 text-gray-400 font-medium px-8 py-4 rounded cursor-not-allowed text-base"
+        >
+          Apply Now — Coming Soon
+        </button>
+      )}
       <p className="mt-6 text-sm text-gray-400">
         Applications are reviewed on a rolling basis. We aim to respond within 14 days.
       </p>
