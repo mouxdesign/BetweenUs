@@ -29,7 +29,7 @@ export default function HomePage() {
         {/* Hero text */}
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 w-full py-20 md:py-32">
           <div className="max-w-[55%] sm:max-w-[50%] md:max-w-xl">
-            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-7xl lg:text-8xl xl:text-9xl text-[#1A1A18] leading-[1.05] tracking-tight mb-6">
+            <h1 className="font-display font-bold text-[#1A1A18] leading-[1.05] tracking-tight mb-6" style={{ fontSize: 'clamp(2.2rem, 7vw, 8rem)' }}>
               Real people.<br />Unfiltered stories.
             </h1>
             <p className="font-sans italic text-lg md:text-xl text-[#3D3D3A] leading-relaxed max-w-sm mb-12">
