@@ -2,8 +2,6 @@
 @plugin "@tailwindcss/typography";
 
 /* ─── Räder (Pangram Pangram) — Bold weight ──────────────────────────────── */
-/* Additional weights will be added as font files are provided.               */
-/* Remaining weights fall back to Cormorant Garamond loaded via next/font.    */
 @font-face {
   font-family: "Rader";
   src: url("/fonts/rader/Rader-Bold.woff") format("woff");
@@ -22,7 +20,6 @@
 }
 
 @theme inline {
-  /* Räder first, Cormorant Garamond (from next/font) as fallback */
   --font-display: "Rader", var(--font-display-fallback), Georgia, serif;
   --font-sans: var(--font-sans);
 
@@ -43,3 +40,19 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
+
+/* ─── TEST: Räder all-caps + 1.5× size ───────────────────────────────────── */
+/* Remove this block to revert. Only affects .font-display elements.          */
+.font-display {
+  text-transform: uppercase;
+}
+
+.font-display.text-lg   { font-size: calc(1.125rem * 1.5) !important; }
+.font-display.text-xl   { font-size: calc(1.25rem  * 1.5) !important; }
+.font-display.text-2xl  { font-size: calc(1.5rem   * 1.5) !important; }
+.font-display.text-3xl  { font-size: calc(1.875rem * 1.5) !important; }
+.font-display.text-4xl  { font-size: calc(2.25rem  * 1.5) !important; }
+.font-display.text-5xl  { font-size: calc(3rem     * 1.5) !important; }
+.font-display.text-6xl  { font-size: calc(3.75rem  * 1.5) !important; }
+.font-display.text-7xl  { font-size: calc(4.5rem   * 1.5) !important; }
+.font-display.text-8xl  { font-size: calc(6rem     * 1.5) !important; }
