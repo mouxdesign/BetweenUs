@@ -58,16 +58,16 @@ export default function HomePage() {
       </section>
 
       {/* ── Vision split ────────────────────────────────────────────────── */}
-      <section className="bg-white px-6 lg:px-10 pb-20 md:pb-28">
+      <section className="bg-[#1A1A18] px-6 lg:px-10 pb-20 md:pb-28">
         <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left card */}
-          <div className="bg-white px-12 md:px-16 py-14 md:py-20 flex flex-col justify-between min-h-[480px]">
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-[#1A1A18] leading-[1.1]">
+          <div className="bg-[#1A1A18] px-12 md:px-16 py-14 md:py-20 flex flex-col justify-between min-h-[480px]">
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-[1.1]">
               We started asking questions. Now we can&apos;t stop.
             </h2>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-[#1A1A18] hover:opacity-60 transition-opacity"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-white/60 hover:text-white transition-colors"
             >
               Read our vision
               <svg width="14" height="10" fill="none" viewBox="0 0 14 10">
