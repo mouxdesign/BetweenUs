@@ -27,9 +27,9 @@ export default function HomePage() {
         </div>
 
         {/* Hero text */}
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 w-full py-24 md:py-32">
-          <div className="max-w-xl">
-            <h1 className="font-display font-bold text-6xl md:text-7xl lg:text-8xl text-[#1A1A18] leading-[1.0] tracking-tight mb-6">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 w-full py-20 md:py-32">
+          <div className="max-w-[55%] sm:max-w-[50%] md:max-w-xl">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-[#1A1A18] leading-[1.05] tracking-tight mb-6">
               Real people.<br />Unfiltered stories.
             </h1>
             <p className="font-sans italic text-lg md:text-xl text-[#3D3D3A] leading-relaxed max-w-sm mb-12">
