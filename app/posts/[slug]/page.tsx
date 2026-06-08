@@ -83,7 +83,7 @@ export default async function PostPage({ params }: PostPageProps) {
                       src={getImageKitUrl(p.coverImage, { width: 600, height: 450 })}
                       alt={p.author}
                       fill
-                      className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <p className="font-display font-bold text-base text-[#1A1A18] mb-1">{p.author}</p>

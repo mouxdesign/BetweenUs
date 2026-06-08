@@ -42,7 +42,7 @@ export default function PostHeader({ post }: { post: Post }) {
             src={imageUrl}
             alt={post.title}
             fill
-            className="object-cover object-center grayscale"
+            className="object-cover object-center"
             priority
           />
         </div>

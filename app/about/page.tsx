@@ -14,7 +14,7 @@ export default function AboutPage() {
           <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-[#1A1A18] leading-tight">
             We started asking questions.
           </h1>
-          <p className="font-display italic text-2xl md:text-3xl text-[#3D3D3A] mt-4">
+          <p className="font-sans italic text-2xl md:text-3xl text-[#3D3D3A] mt-4">
             Now we can&apos;t stop.
           </p>
         </div>

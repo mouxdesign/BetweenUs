@@ -18,7 +18,7 @@ export default function HomePage() {
               src={getImageKitUrl(posts[0]?.coverImage ?? "between-us/hero-placeholder", { width: 900 })}
               alt="Between Us hero"
               fill
-              className="object-cover object-center grayscale"
+              className="object-cover object-center"
               priority
             />
             {/* Gradient fade to cream on left edge */}
@@ -32,7 +32,7 @@ export default function HomePage() {
             <h1 className="font-display font-bold text-6xl md:text-7xl lg:text-8xl text-[#1A1A18] leading-[1.0] tracking-tight mb-6">
               Real people.<br />Unfiltered stories.
             </h1>
-            <p className="font-display italic text-lg md:text-xl text-[#3D3D3A] leading-relaxed max-w-sm mb-12">
+            <p className="font-sans italic text-lg md:text-xl text-[#3D3D3A] leading-relaxed max-w-sm mb-12">
               From families to builders — the humans behind the technology, in their own words.
             </p>
             <div className="flex flex-col items-start gap-2">
@@ -81,7 +81,7 @@ export default function HomePage() {
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80&fit=crop"
               alt="Between Us vision"
               fill
-              className="object-cover object-center grayscale"
+              className="object-cover object-center"
             />
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function HomePage() {
                     src={getImageKitUrl(post.coverImage, { width: 600, height: 600 })}
                     alt={post.author}
                     fill
-                    className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div>
@@ -112,7 +112,7 @@ export default function HomePage() {
                     {post.geography.join(", ")}
                   </p>
                   {post.pullQuote && (
-                    <p className="font-display italic text-base text-[#3D3D3A] leading-snug">
+                    <p className="font-sans italic text-base text-[#3D3D3A] leading-snug">
                       &ldquo;{post.pullQuote}&rdquo;
                     </p>
                   )}
@@ -132,7 +132,7 @@ export default function HomePage() {
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-3">
               We started asking questions.
             </h2>
-            <p className="font-display italic text-2xl md:text-3xl text-white/60">
+            <p className="font-sans italic text-2xl md:text-3xl text-white/60">
               Now we can&apos;t stop.
             </p>
           </div>

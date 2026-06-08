@@ -45,20 +45,20 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                   src={getImageKitUrl(post.coverImage, { width: 600, height: 600 })}
                   alt={post.author}
                   fill
-                  className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <p className="font-display font-bold text-lg text-[#1A1A18] mb-0.5">{post.author}</p>
               <p className="text-xs text-[#888884] uppercase tracking-widest mb-3">{post.geography.join(", ")}</p>
               {post.pullQuote && (
-                <p className="font-display italic text-base text-[#3D3D3A] leading-snug">
+                <p className="font-sans italic text-base text-[#3D3D3A] leading-snug">
                   &ldquo;{post.pullQuote}&rdquo;
                 </p>
               )}
             </Link>
           ))}
           {filtered.length === 0 && (
-            <p className="text-[#888884] col-span-full py-20 text-center font-display italic text-xl">
+            <p className="text-[#888884] col-span-full py-20 text-center font-sans italic text-xl">
               No stories match the selected filters.
             </p>
           )}

@@ -25,14 +25,14 @@ export default async function UseCasePage({ params }: UseCasePageProps) {
           {posts.map((post) => (
             <Link key={post.slug} href={`/posts/${post.slug}`} className="group block">
               <div className="relative aspect-square bg-[#E8E5DE] overflow-hidden mb-5">
-                <Image src={getImageKitUrl(post.coverImage, { width: 600, height: 600 })} alt={post.author} fill className="object-cover grayscale group-hover:scale-105 transition-transform duration-500" />
+                <Image src={getImageKitUrl(post.coverImage, { width: 600, height: 600 })} alt={post.author} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <p className="font-display font-bold text-lg text-[#1A1A18] mb-0.5">{post.author}</p>
               <p className="text-xs text-[#888884] uppercase tracking-widest mb-3">{post.geography.join(", ")}</p>
-              {post.pullQuote && <p className="font-display italic text-base text-[#3D3D3A]">&ldquo;{post.pullQuote}&rdquo;</p>}
+              {post.pullQuote && <p className="font-sans italic text-base text-[#3D3D3A]">&ldquo;{post.pullQuote}&rdquo;</p>}
             </Link>
           ))}
-          {posts.length === 0 && <p className="text-[#888884] col-span-full font-display italic text-xl">No stories found.</p>}
+          {posts.length === 0 && <p className="text-[#888884] col-span-full font-sans italic text-xl">No stories found.</p>}
         </div>
       </div>
     </main>
