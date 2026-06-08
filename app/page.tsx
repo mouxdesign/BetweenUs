@@ -125,14 +125,23 @@ export default function HomePage() {
 
       {/* ── Dark CTA ────────────────────────────────────────────────────── */}
       <section className="bg-[#1A1A18] px-6 lg:px-10 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6">The Origin</p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-3">
-            We started asking questions.
+        <div className="mx-auto max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6">The Ask</p>
+          <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-6">
+            Your story belongs in this archive.
           </h2>
-          <p className="font-sans italic text-2xl md:text-3xl text-white/60">
-            Now we can&apos;t stop.
+          <p className="text-[#888884] text-base leading-relaxed mb-10">
+            We are looking for people whose lives have been changed by new tools for financial freedom — not traders, not investors. People. Apply to share your story.
           </p>
+          <Link
+            href="/apply/bitcoin"
+            className="inline-flex items-center gap-3 border border-white text-white text-xs uppercase tracking-[0.15em] px-8 py-4 hover:bg-white hover:text-[#1A1A18] transition-colors"
+          >
+            Share your story
+            <svg width="14" height="10" fill="none" viewBox="0 0 14 10">
+              <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         </div>
       </section>
 
