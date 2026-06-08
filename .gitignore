@@ -34,9 +34,6 @@ yarn-error.log*
 .env*
 .env.local
 
-# fonts (self-hosted commercial typefaces — do not commit)
-/public/fonts/
-
 # vercel
 .vercel
 
