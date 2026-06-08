@@ -75,14 +75,16 @@ export default function HomePage() {
               </svg>
             </Link>
           </div>
-          {/* Right portrait */}
-          <div className="relative min-h-[480px] bg-[#E8E5DE] overflow-hidden">
+          {/* Right portrait — inset to match text padding */}
+          <div className="py-14 md:py-20 bg-[#1A1A18]">
+            <div className="relative min-h-[400px] overflow-hidden">
             <Image
               src="/images/temp/Image1.png"
               alt="Between Us vision"
               fill
               className="object-cover object-center"
             />
+            </div>
           </div>
         </div>
       </section>
