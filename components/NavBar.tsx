@@ -27,7 +27,7 @@ export default function NavBar() {
 
           {/* Brand */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <Image src="/images/logo.svg" alt="Between Us logo" width={28} height={19} />
+            <Image src="/images/logo.svg" alt="Between Us logo" width={38} height={26} />
             <span className="font-display font-bold text-xl text-[#1A1A18] tracking-tight leading-none">
               Between Us.
             </span>

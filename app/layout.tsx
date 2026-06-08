@@ -4,7 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-// Cormorant Garamond is used as fallback for Räder weights not yet available
+// Cormorant Garamond — fallback for Räder weights not yet available
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -13,9 +13,10 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+// Inter — fallback for Frama
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-sans-fallback",
   display: "swap",
 });
 

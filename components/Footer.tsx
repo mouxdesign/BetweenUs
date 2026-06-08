@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5">
-              <Image src="/images/logo.svg" alt="Between Us logo" width={28} height={19} className="invert" />
+              <Image src="/images/logo.svg" alt="Between Us logo" width={38} height={26} className="invert" />
               <span className="font-display font-bold text-xl text-white leading-none">Between Us.</span>
             </Link>
           </div>

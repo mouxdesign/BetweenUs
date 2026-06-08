@@ -1,11 +1,20 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* ─── Räder (Pangram Pangram) — Bold weight ──────────────────────────────── */
+/* ─── Räder (Pangram Pangram) — Bold ─────────────────────────────────────── */
 @font-face {
   font-family: "Rader";
   src: url("/fonts/rader/Rader-Bold.woff") format("woff");
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Frama (Pangram Pangram) — Regular body font ────────────────────────── */
+@font-face {
+  font-family: "Frama";
+  src: url("/fonts/PPFrama-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -21,7 +30,7 @@
 
 @theme inline {
   --font-display: "Rader", var(--font-display-fallback), Georgia, serif;
-  --font-sans: var(--font-sans);
+  --font-sans: "Frama", var(--font-sans-fallback), Helvetica, Arial, sans-serif;
 
   --color-cream: var(--color-cream);
   --color-cream-dark: var(--color-cream-dark);
@@ -41,10 +50,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── TEST: Räder all-caps + 1.5× size ───────────────────────────────────── */
-/* Remove this block to revert. Only affects .font-display elements.          */
+/* ─── TEST: Räder all-caps + letter-spacing + 1.5× size ──────────────────── */
+/* Remove this block to revert.                                                */
 .font-display {
   text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .font-display.text-lg   { font-size: calc(1.125rem * 1.5) !important; }
