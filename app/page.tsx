@@ -16,8 +16,9 @@ export default function HomePage() {
           <div className="relative w-full h-full min-h-[70vh]">
             <Image
               src="/images/temp/Hero.jpg"
-              alt="Between Us hero"
+              alt="Portrait of a Between Us story subject"
               fill
+              sizes="(max-width: 768px) 50vw, 52vw"
               className="object-cover object-center"
               priority
             />
@@ -82,6 +83,7 @@ export default function HomePage() {
               src="/images/temp/Image1.png"
               alt="Between Us vision"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-center"
             />
             </div>
@@ -99,12 +101,13 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
             {posts.slice(0, 3).map((post) => (
-              <Link key={post.slug} href={`/posts/${post.slug}`} className="group block">
+              <Link key={post.slug} href={`/story/${post.slug}`} className="group block">
                 <div className="relative aspect-square bg-[#E8E5DE] overflow-hidden mb-5">
                   <Image
                     src={getImageKitUrl(post.coverImage, { width: 600, height: 600 })}
-                    alt={post.author}
+                    alt={`${post.author} — ${post.title}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>

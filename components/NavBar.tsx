@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import SearchBox from "./SearchBox";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ export default function NavBar() {
             <Link href="/" className="text-sm text-[#1A1A18] hover:opacity-60 transition-opacity">
               Home
             </Link>
-            <Link href="/blog" className="text-sm text-[#1A1A18] hover:opacity-60 transition-opacity">
+            <Link href="/stories" className="text-sm text-[#1A1A18] hover:opacity-60 transition-opacity">
               Stories
             </Link>
             <Link href="/about" className="text-sm text-[#1A1A18] hover:opacity-60 transition-opacity">
@@ -79,12 +80,7 @@ export default function NavBar() {
 
           {/* Desktop right */}
           <div className="hidden md:flex items-center gap-4">
-            <button aria-label="Search" className="text-[#1A1A18] hover:opacity-60 transition-opacity p-1">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <circle cx="11" cy="11" r="7" />
-                <path strokeLinecap="round" d="M16.5 16.5l4 4" />
-              </svg>
-            </button>
+            <SearchBox variant="pill" className="w-44 lg:w-52" />
             <Link
               href="/apply/bitcoin"
               className="bg-[#1A1A18] text-white text-sm font-medium px-4 py-2 rounded-full hover:opacity-80 transition-opacity"
@@ -115,8 +111,11 @@ export default function NavBar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden border-t border-[#E8E5DE] bg-[#F2F0EB] px-6 py-5 space-y-4">
+          <div onClick={() => setMenuOpen(false)}>
+            <SearchBox />
+          </div>
           <Link href="/" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/blog" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>Stories</Link>
+          <Link href="/stories" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>Stories</Link>
           <Link href="/about" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>About</Link>
           <div className="pl-0 space-y-2 border-t border-[#E8E5DE] pt-4">
             <p className="text-xs uppercase tracking-[0.15em] text-[#888884]">Apply</p>

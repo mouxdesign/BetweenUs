@@ -1,8 +1,10 @@
+import type { Metadata } from "next";
 import ApplyPageTemplate from "@/components/ApplyPageTemplate";
 
-export const metadata = {
-  title: "Apply: AI — Between Us",
+export const metadata: Metadata = {
+  title: "Apply: AI",
   description: "Share your AI story with Between Us.",
+  alternates: { canonical: "/apply/ai" },
 };
 
 export default function ApplyAIPage() {

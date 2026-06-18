@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllGeographies, filterPosts } from "@/lib/posts";
@@ -9,6 +10,16 @@ interface GeoPageProps {
 
 export async function generateStaticParams() {
   return getAllGeographies().map((location) => ({ location: encodeURIComponent(location) }));
+}
+
+export async function generateMetadata({ params }: GeoPageProps): Promise<Metadata> {
+  const { location } = await params;
+  const decoded = decodeURIComponent(location);
+  return {
+    title: `Stories from ${decoded}`,
+    description: `First-hand Bitcoin and AI stories from ${decoded}.`,
+    alternates: { canonical: `/geography/${encodeURIComponent(decoded)}` },
+  };
 }
 
 export default async function GeographyPage({ params }: GeoPageProps) {
@@ -23,9 +34,9 @@ export default async function GeographyPage({ params }: GeoPageProps) {
         <h1 className="font-display font-bold text-5xl md:text-6xl text-[#1A1A18] mb-14">{decoded}</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/posts/${post.slug}`} className="group block">
+            <Link key={post.slug} href={`/story/${post.slug}`} className="group block">
               <div className="relative aspect-square bg-[#E8E5DE] overflow-hidden mb-5">
-                <Image src={getImageKitUrl(post.coverImage, { width: 600, height: 600 })} alt={post.author} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src={getImageKitUrl(post.coverImage, { width: 600, height: 600 })} alt={`${post.author} — ${post.title}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <p className="font-display font-bold text-lg text-[#1A1A18] mb-0.5">{post.author}</p>
               <p className="text-xs text-[#888884] uppercase tracking-widest mb-3">{post.geography.join(", ")}</p>

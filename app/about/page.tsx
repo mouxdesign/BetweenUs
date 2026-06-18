@@ -1,6 +1,9 @@
-export const metadata = {
-  title: "About — Between Us",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
   description: "Between Us is an editorial publication covering Bitcoin and AI stories from around the world.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

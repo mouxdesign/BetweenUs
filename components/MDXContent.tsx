@@ -1,27 +1,30 @@
-"use client";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
-import { useMemo } from "react";
-import { MDXProvider } from "@mdx-js/react";
-
-// Simple MDX renderer — converts raw MDX/markdown string to JSX
-// using a minimal set of HTML element overrides for typography control
+// Server component: renders post markdown to React elements via react-markdown.
+// react-markdown does NOT use dangerouslySetInnerHTML and escapes any raw HTML
+// in the source by default, so this is XSS-safe. Rendering on the server also
+// keeps the article body in the initial HTML for SEO and faster paint.
 export default function MDXContent({ source }: { source: string }) {
-  const html = useMemo(() => markdownToHtml(source), [source]);
-  return <div dangerouslySetInnerHTML={{ __html: html }} />;
-}
-
-function markdownToHtml(md: string): string {
-  return md
-    .replace(/^## (.+)$/gm, "<h2>$1</h2>")
-    .replace(/^### (.+)$/gm, "<h3>$1</h3>")
-    .replace(/^# (.+)$/gm, "<h1>$1</h1>")
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.+?)\*/g, "<em>$1</em>")
-    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>')
-    .split(/\n\n+/)
-    .map((block) => {
-      if (block.startsWith("<h")) return block;
-      return `<p>${block.replace(/\n/g, " ")}</p>`;
-    })
-    .join("\n");
+  return (
+    <Markdown
+      remarkPlugins={[remarkGfm]}
+      components={{
+        a: ({ href, children, ...props }) => {
+          const isExternal = !!href && /^https?:\/\//.test(href);
+          return (
+            <a
+              href={href}
+              {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              {...props}
+            >
+              {children}
+            </a>
+          );
+        },
+      }}
+    >
+      {source}
+    </Markdown>
+  );
 }

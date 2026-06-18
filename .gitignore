@@ -34,6 +34,12 @@ yarn-error.log*
 # env files
 .env*
 .env.local
+!.env.local.example
+
+# AI agent / assistant tooling — local only, never deployed
+/.agent
+AGENTS.md
+CLAUDE.md
 
 # vercel
 .vercel
