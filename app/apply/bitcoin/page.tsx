@@ -54,6 +54,19 @@ export default function ApplyBitcoinPage() {
           <h1 className="font-display font-bold text-white leading-[1.05]" style={{ fontSize: 'clamp(2.2rem, 6vw, 7rem)' }}>
             The most important bitcoin stories have never been told.
           </h1>
+          <div className="mt-12">
+            <a
+              href="https://tally.so/r/EkJRB4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 border border-white text-white text-xs uppercase tracking-[0.15em] px-8 py-4 hover:bg-white hover:text-[#1A1A18] transition-colors"
+            >
+              Share your story
+              <svg width="14" height="10" fill="none" viewBox="0 0 14 10">
+                <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -142,7 +155,7 @@ export default function ApplyBitcoinPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 border border-white text-white text-xs uppercase tracking-[0.15em] px-8 py-4 hover:bg-white hover:text-[#1A1A18] transition-colors"
           >
-            Apply here
+            Share your story
             <svg width="14" height="10" fill="none" viewBox="0 0 14 10">
               <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

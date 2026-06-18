@@ -115,7 +115,7 @@ export default function HomePage() {
                   </p>
                   {post.pullQuote && (
                     <p className="font-sans italic text-base text-[#3D3D3A] leading-snug">
-                      &ldquo;{post.pullQuote}&rdquo;
+                      <span aria-hidden="true" className="-ml-[0.4em] mr-[0.05em]">&ldquo;</span>{post.pullQuote}&rdquo;
                     </p>
                   )}
                 </div>

@@ -23,7 +23,7 @@ export default function PostHeader({ post }: { post: Post }) {
           <div className="flex-1 flex items-center">
             {post.pullQuote ? (
               <blockquote className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-[#1A1A18] leading-[1.1]">
-                &ldquo;{post.pullQuote}&rdquo;
+                <span aria-hidden="true" className="-ml-[0.45em] mr-[0.05em]">&ldquo;</span>{post.pullQuote}&rdquo;
               </blockquote>
             ) : (
               <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-[#1A1A18] leading-[1.1]">

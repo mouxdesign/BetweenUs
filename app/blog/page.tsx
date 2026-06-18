@@ -52,7 +52,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               <p className="text-xs text-[#888884] uppercase tracking-widest mb-3">{post.geography.join(", ")}</p>
               {post.pullQuote && (
                 <p className="font-sans italic text-base text-[#3D3D3A] leading-snug">
-                  &ldquo;{post.pullQuote}&rdquo;
+                  <span aria-hidden="true" className="-ml-[0.4em] mr-[0.05em]">&ldquo;</span>{post.pullQuote}&rdquo;
                 </p>
               )}
             </Link>
