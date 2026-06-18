@@ -22,6 +22,7 @@
 
 # misc
 .DS_Store
+/public/fonts/
 *.pem
 
 # debug

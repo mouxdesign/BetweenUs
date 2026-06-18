@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand lockup */}
           <div className="md:col-span-1">
             <Link href="/">
-              <Image src="/images/logo.svg" alt="Between Us" width={224} height={24} className="invert" />
+              <Image src="/images/logo.svg" alt="Between Us" width={179} height={19} className="invert" />
             </Link>
           </div>
 
