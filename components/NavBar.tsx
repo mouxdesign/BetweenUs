@@ -81,12 +81,6 @@ export default function NavBar() {
           {/* Desktop right */}
           <div className="hidden md:flex items-center gap-4">
             <SearchBox variant="pill" className="w-44 lg:w-52" />
-            <Link
-              href="/apply/bitcoin"
-              className="bg-[#1A1A18] text-white text-sm font-medium px-4 py-2 rounded-full hover:opacity-80 transition-opacity"
-            >
-              Subscribe
-            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -122,13 +116,6 @@ export default function NavBar() {
             <Link href="/apply/bitcoin" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>Apply: Bitcoin</Link>
             <Link href="/apply/ai" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>Apply: AI</Link>
           </div>
-          <Link
-            href="/apply/bitcoin"
-            className="inline-block bg-[#1A1A18] text-white text-sm font-medium px-5 py-2.5 rounded-full mt-2"
-            onClick={() => setMenuOpen(false)}
-          >
-            Subscribe
-          </Link>
         </div>
       )}
     </nav>
