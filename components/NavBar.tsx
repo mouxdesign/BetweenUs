@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SearchBox from "./SearchBox";
+import NavSearch from "./NavSearch";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -80,7 +81,9 @@ export default function NavBar() {
 
           {/* Desktop right */}
           <div className="hidden md:flex items-center gap-4">
-            <SearchBox variant="pill" className="w-44 lg:w-52" />
+            <Suspense fallback={<SearchBox variant="pill" className="w-44 lg:w-52" />}>
+              <NavSearch variant="pill" className="w-44 lg:w-52" />
+            </Suspense>
           </div>
 
           {/* Mobile hamburger */}
@@ -105,9 +108,9 @@ export default function NavBar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden border-t border-[#E8E5DE] bg-[#F2F0EB] px-6 py-5 space-y-4">
-          <div onClick={() => setMenuOpen(false)}>
-            <SearchBox />
-          </div>
+          <Suspense fallback={<SearchBox />}>
+            <NavSearch onSubmitted={() => setMenuOpen(false)} />
+          </Suspense>
           <Link href="/" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link href="/stories" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>Stories</Link>
           <Link href="/about" className="block text-sm text-[#1A1A18]" onClick={() => setMenuOpen(false)}>About</Link>

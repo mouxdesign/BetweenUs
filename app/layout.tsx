@@ -30,6 +30,15 @@ export const metadata: Metadata = {
   description: siteDescription,
   applicationName: siteName,
   alternates: { canonical: "/" },
+  icons: {
+    // Transparent icon first so it adapts to light/dark browser tabs;
+    // the .ico (also transparent) is a fallback for legacy browsers.
+    icon: [
+      { url: "/favicon/favicon-transparent-56.png", type: "image/png", sizes: "56x56" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
     type: "website",
     siteName,

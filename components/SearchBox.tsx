@@ -13,6 +13,8 @@ interface SearchBoxProps {
    */
   variant?: "underline" | "pill";
   className?: string;
+  /** Called after a successful search submit (e.g. to close a mobile menu). */
+  onSubmitted?: () => void;
 }
 
 // Progressive-enhancement search input. It is a real <form> that GET-submits to
@@ -24,6 +26,7 @@ export default function SearchBox({
   placeholder = "Search stories…",
   variant = "underline",
   className = "",
+  onSubmitted,
 }: SearchBoxProps) {
   const router = useRouter();
   const [value, setValue] = useState(defaultValue);
@@ -31,7 +34,9 @@ export default function SearchBox({
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const q = value.trim();
-    if (q) router.push(`/search?q=${encodeURIComponent(q)}`);
+    if (!q) return;
+    router.push(`/search?q=${encodeURIComponent(q)}`);
+    onSubmitted?.();
   }
 
   const isPill = variant === "pill";

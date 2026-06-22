@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, getAllTags, getAllGeographies, getAllUseCases } from "@/lib/posts";
 import { siteUrl as baseUrl } from "@/lib/site";
+import { slugify } from "@/lib/slug";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
@@ -23,21 +24,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const tagRoutes: MetadataRoute.Sitemap = getAllTags().map((tag) => ({
-    url: `${baseUrl}/tags/${encodeURIComponent(tag)}`,
+    url: `${baseUrl}/stories/tags/${slugify(tag)}`,
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.4,
   }));
 
   const geographyRoutes: MetadataRoute.Sitemap = getAllGeographies().map((location) => ({
-    url: `${baseUrl}/geography/${encodeURIComponent(location)}`,
+    url: `${baseUrl}/stories/geography/${slugify(location)}`,
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.4,
   }));
 
   const useCaseRoutes: MetadataRoute.Sitemap = getAllUseCases().map((useCase) => ({
-    url: `${baseUrl}/use-case/${encodeURIComponent(useCase)}`,
+    url: `${baseUrl}/stories/use-case/${slugify(useCase)}`,
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.4,
