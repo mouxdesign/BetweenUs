@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${baseUrl}/apply/bitcoin`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/apply/ai`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
