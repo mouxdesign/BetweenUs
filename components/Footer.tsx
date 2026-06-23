@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-xs text-white/30">
-          <span>© {new Date().getFullYear()} Between Us Magazine</span>
+          <span>© 2026 Between Us Stories</span>
           <span>A human-centric publication.</span>
         </div>
       </div>
