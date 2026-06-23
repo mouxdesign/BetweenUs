@@ -23,7 +23,7 @@ export default function Footer() {
           {/* Nav */}
           <div className="space-y-2">
             <Link href="/about" className="block text-xs uppercase tracking-widest text-white/50 hover:text-white transition-colors">About</Link>
-            <Link href="/apply/bitcoin" className="block text-xs uppercase tracking-widest text-white/50 hover:text-white transition-colors">Contact</Link>
+            <a href="mailto:hello@betweenusstories.com" className="block text-xs uppercase tracking-widest text-white/50 hover:text-white transition-colors">Contact</a>
             <Link href="/privacy" className="block text-xs uppercase tracking-widest text-white/50 hover:text-white transition-colors">Privacy</Link>
           </div>
         </div>
