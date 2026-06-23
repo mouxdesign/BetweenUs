@@ -115,10 +115,10 @@ export default function PrivacyPage() {
             <p>
               To exercise your rights or ask any question about this policy, email us at{" "}
               <a
-                href="mailto:privacy@betweenusstories.com"
+                href="mailto:hello@betweenusstories.com"
                 className="text-[#1A1A18] underline underline-offset-2 hover:opacity-60 transition-opacity"
               >
-                privacy@betweenusstories.com
+                hello@betweenusstories.com
               </a>
               .
             </p>
