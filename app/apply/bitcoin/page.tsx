@@ -1,8 +1,9 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Apply: Bitcoin — Between Us",
+export const metadata: Metadata = {
+  title: "Apply: Bitcoin",
   description: "Share your Bitcoin story with Between Us.",
+  alternates: { canonical: "/apply/bitcoin" },
 };
 
 const stories = [

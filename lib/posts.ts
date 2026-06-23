@@ -68,3 +68,47 @@ export function filterPosts({ tag, geography, useCase }: { tag?: string; geograp
     return true;
   });
 }
+
+export interface SearchResult extends Post {
+  score: number;
+}
+
+// Full-text search across all post fields. Every whitespace-separated term in
+// the query must match somewhere in a post (AND semantics). Matches in the
+// title/author/tags are weighted higher than matches in the body copy so the
+// most relevant stories surface first.
+export function searchPosts(query: string): SearchResult[] {
+  const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  if (terms.length === 0) return [];
+
+  return getAllPosts()
+    .map((post) => {
+      const fields: { text: string; weight: number }[] = [
+        { text: post.title, weight: 5 },
+        { text: post.author, weight: 4 },
+        { text: post.subject ?? "", weight: 3 },
+        { text: post.tags.join(" "), weight: 3 },
+        { text: post.geography.join(" "), weight: 3 },
+        { text: post.useCase.join(" "), weight: 3 },
+        { text: post.pullQuote ?? "", weight: 2 },
+        { text: post.excerpt, weight: 2 },
+        { text: post.content, weight: 1 },
+      ].map((f) => ({ text: f.text.toLowerCase(), weight: f.weight }));
+
+      let score = 0;
+      const matchesAllTerms = terms.every((term) => {
+        let termMatched = false;
+        for (const field of fields) {
+          if (field.text.includes(term)) {
+            score += field.weight;
+            termMatched = true;
+          }
+        }
+        return termMatched;
+      });
+
+      return matchesAllTerms ? { ...post, score } : null;
+    })
+    .filter((r): r is SearchResult => r !== null)
+    .sort((a, b) => b.score - a.score);
+}

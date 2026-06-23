@@ -1,0 +1,15 @@
+import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/site";
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+      // Search result pages add no SEO value and shouldn't be crawled.
+      disallow: "/search",
+    },
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
+  };
+}

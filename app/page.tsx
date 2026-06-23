@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts } from "@/lib/posts";
-import { getImageKitUrl } from "@/lib/imagekit";
+import StoryCard from "@/components/StoryCard";
 
 export default function HomePage() {
   const posts = getAllPosts();
@@ -16,8 +16,9 @@ export default function HomePage() {
           <div className="relative w-full h-full min-h-[70vh]">
             <Image
               src="/images/temp/Hero.jpg"
-              alt="Between Us hero"
+              alt="Portrait of a Between Us story subject"
               fill
+              sizes="(max-width: 768px) 50vw, 52vw"
               className="object-cover object-center"
               priority
             />
@@ -82,6 +83,7 @@ export default function HomePage() {
               src="/images/temp/Image1.png"
               alt="Between Us vision"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-center"
             />
             </div>
@@ -99,27 +101,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
             {posts.slice(0, 3).map((post) => (
-              <Link key={post.slug} href={`/posts/${post.slug}`} className="group block">
-                <div className="relative aspect-square bg-[#E8E5DE] overflow-hidden mb-5">
-                  <Image
-                    src={getImageKitUrl(post.coverImage, { width: 600, height: 600 })}
-                    alt={post.author}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div>
-                  <p className="font-display font-bold text-lg text-[#1A1A18] mb-0.5">{post.author}</p>
-                  <p className="text-xs text-[#888884] uppercase tracking-widest mb-3">
-                    {post.geography.join(", ")}
-                  </p>
-                  {post.pullQuote && (
-                    <p className="font-sans italic text-base text-[#3D3D3A] leading-snug">
-                      <span aria-hidden="true" className="-ml-[0.4em] mr-[0.05em]">&ldquo;</span>{post.pullQuote}&rdquo;
-                    </p>
-                  )}
-                </div>
-              </Link>
+              <StoryCard key={post.slug} post={post} sizes="(max-width: 768px) 100vw, 33vw" />
             ))}
           </div>
         </div>
