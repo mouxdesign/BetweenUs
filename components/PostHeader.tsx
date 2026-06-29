@@ -43,7 +43,8 @@ export default function PostHeader({ post }: { post: Post }) {
             alt={`Portrait accompanying the story: ${post.title}`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-center"
+            className="object-cover"
+            style={{ objectPosition: post.coverPosition ?? "center" }}
             priority
           />
         </div>

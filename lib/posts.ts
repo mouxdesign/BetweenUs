@@ -12,6 +12,8 @@ export interface PostFrontmatter {
   pullQuote?: string;
   subject?: string;
   coverImage: string;
+  /** CSS object-position for the hero crop, e.g. "center 20%". Defaults to center. */
+  coverPosition?: string;
   tags: string[];
   geography: string[];
   useCase: string[];
