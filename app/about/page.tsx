@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -58,6 +59,53 @@ export default function AboutPage() {
           </aside>
         </div>
       </div>
+
+      {/* ── Credibility ─────────────────────────────────────────────────── */}
+      <section className="bg-white px-6 lg:px-10 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#888884] mb-6">Built in public</p>
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-[#1A1A18] leading-tight mb-6 max-w-2xl" style={{ textTransform: 'none' }}>
+            This project is being built live and in public in the Bitcoin Design Community.
+          </h2>
+          <p className="text-[#3D3D3A] text-base leading-relaxed mb-14 max-w-xl">
+            It is being built by the following people who have contributed in the following ways.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[#E8E5DE] mb-20">
+            {[
+              { name: "Mogashni", role: "Project Lead", href: "https://www.moux.design/" },
+              { name: "Miro", role: "Product Leader", href: "https://miroremias.com/" },
+              { name: "Desi", role: "Lead Storyteller", href: "https://x.com/micro_cosma" },
+              { name: "Sanyam", role: "Design", href: "https://x.com/sanyummmmm" },
+            ].map((person) => (
+              <a
+                key={person.name}
+                href={person.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-8 md:p-10 group hover:bg-[#F2F0EB] transition-colors"
+              >
+                <p className="font-display font-bold text-xl text-[#1A1A18] mb-1 group-hover:opacity-60 transition-opacity" style={{ textTransform: 'none' }}>{person.name}</p>
+                <p className="text-xs uppercase tracking-[0.15em] text-[#888884]">{person.role}</p>
+              </a>
+            ))}
+          </div>
+
+          <div className="flex flex-col items-center gap-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#888884]">A project of the</p>
+            <a href="https://bitcoin.design" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity">
+              <Image
+                src="https://ik.imagekit.io/betweenus/Bitcoin%20Design%20Community%20logo,%20Black%20on%20white,%20Full.png"
+                alt="Bitcoin Design Community"
+                width={160}
+                height={160}
+                className="object-contain"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
