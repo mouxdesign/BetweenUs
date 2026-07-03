@@ -47,16 +47,16 @@ export default function HomePage() {
       </section>
 
       {/* ── Story Bank ──────────────────────────────────────────────────── */}
-      <section className="bg-[#F2F0EB] px-6 lg:px-10 py-20 md:py-28">
+      <section className="bg-[#1A1A18] px-6 lg:px-10 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="flex justify-center mb-14">
-            <span className="border border-[#1A1A18] text-[#1A1A18] text-xs uppercase tracking-[0.2em] px-5 py-2 rounded-full">
+            <span className="border border-white/30 text-white/60 text-xs uppercase tracking-[0.2em] px-5 py-2 rounded-full">
               Story Bank
             </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
             {posts.slice(0, 3).map((post) => (
-              <StoryCard key={post.slug} post={post} sizes="(max-width: 768px) 100vw, 33vw" />
+              <StoryCard key={post.slug} post={post} sizes="(max-width: 768px) 100vw, 33vw" dark />
             ))}
           </div>
         </div>

@@ -9,9 +9,11 @@ import type { Post } from "@/lib/posts";
 export default function StoryCard({
   post,
   sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+  dark = false,
 }: {
   post: Post;
   sizes?: string;
+  dark?: boolean;
 }) {
   return (
     <div className="group">
@@ -25,7 +27,7 @@ export default function StoryCard({
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </div>
-        <p className="font-display font-bold text-lg text-[#1A1A18] mb-0.5">{post.author}</p>
+        <p className={`font-display font-bold text-lg mb-0.5 ${dark ? "text-white" : "text-[#1A1A18]"}`}>{post.author}</p>
         <p className="text-xs text-[#888884] uppercase tracking-widest mb-3">
           {post.geography.join(", ")}
           {post.date && (
@@ -42,7 +44,7 @@ export default function StoryCard({
           )}
         </p>
         {post.pullQuote && (
-          <p className="font-sans italic text-base text-[#3D3D3A] leading-snug">
+          <p className={`font-sans italic text-base leading-snug ${dark ? "text-white/70" : "text-[#3D3D3A]"}`}>
             <span aria-hidden="true" className="-ml-[0.4em] mr-[0.05em]">&ldquo;</span>
             {post.pullQuote}&rdquo;
           </p>
@@ -54,7 +56,7 @@ export default function StoryCard({
             <Link
               key={uc}
               href={`/stories/use-case/${slugify(uc)}`}
-              className="border border-[#1A1A18] text-[#1A1A18] text-[10px] uppercase tracking-[0.15em] px-2.5 py-1 rounded-full hover:bg-[#1A1A18] hover:text-white transition-colors"
+              className={`text-[10px] uppercase tracking-[0.15em] px-2.5 py-1 rounded-full transition-colors ${dark ? "border border-white/30 text-white/60 hover:bg-white hover:text-[#1A1A18]" : "border border-[#1A1A18] text-[#1A1A18] hover:bg-[#1A1A18] hover:text-white"}`}
             >
               {uc}
             </Link>
