@@ -27,28 +27,13 @@ export default function StoryCard({
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </div>
-        <p className={`font-display font-bold text-lg mb-0.5 ${dark ? "text-white" : "text-[#1A1A18]"}`}>{post.author}</p>
-        <p className="text-xs text-[#888884] uppercase tracking-widest mb-3">
-          {post.geography.join(", ")}
-          {post.date && (
-            <>
-              {" · "}
-              <time dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString("en-GB", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </time>
-            </>
-          )}
-        </p>
         {post.pullQuote && (
-          <p className={`font-sans italic text-base leading-snug ${dark ? "text-white/70" : "text-[#3D3D3A]"}`}>
-            <span aria-hidden="true" className="-ml-[0.4em] mr-[0.05em]">&ldquo;</span>
+          <p className={`font-display font-bold text-xl md:text-2xl leading-snug mb-3 ${dark ? "text-white" : "text-[#1A1A18]"}`}>
+            <span aria-hidden="true" className="-ml-[0.45em] mr-[0.05em]">&ldquo;</span>
             {post.pullQuote}&rdquo;
           </p>
         )}
+        <p className={`text-xs uppercase tracking-[0.15em] ${dark ? "text-white/40" : "text-[#888884]"}`}>{post.author}</p>
       </Link>
       {post.useCase.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-3">
