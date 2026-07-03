@@ -28,7 +28,7 @@ export default function StoryCard({
           />
         </div>
         {post.pullQuote && (
-          <p className={`font-display font-bold text-xl md:text-2xl leading-snug mb-3 [text-transform:none] ${dark ? "text-white" : "text-[#1A1A18]"}`}>
+          <p className={`font-display font-bold text-xl md:text-2xl leading-snug mb-3 ${dark ? "text-white" : "text-[#1A1A18]"}`} style={{ textTransform: 'none' }}>
             <span aria-hidden="true" className="-ml-[0.45em] mr-[0.05em]">&ldquo;</span>
             {post.pullQuote}&rdquo;
           </p>
