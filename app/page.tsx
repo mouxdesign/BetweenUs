@@ -74,40 +74,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Vision split ────────────────────────────────────────────────── */}
-      <section className="bg-[#1A1A18] px-6 lg:px-10">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-0">
-          {/* Left card */}
-          <div className="bg-[#1A1A18] px-12 md:px-16 py-14 md:py-20 flex flex-col justify-between min-h-[480px]">
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-[1.1]">
-              We started asking questions. Now we can&apos;t stop.
-            </h2>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-white/60 hover:text-white transition-colors"
-            >
-              Read our vision
-              <svg width="14" height="10" fill="none" viewBox="0 0 14 10">
-                <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-          </div>
-          {/* Right portrait — inset to match text padding */}
-          <div className="py-14 md:py-20 bg-[#1A1A18]">
-            <div className="relative min-h-[400px] overflow-hidden">
-            <Image
-              src="/images/temp/Image1.png"
-              alt="Between Us vision"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-center"
-            />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ── Dark CTA ────────────────────────────────────────────────────── */}
+{/* ── Dark CTA ────────────────────────────────────────────────────── */}
       <section className="bg-[#1A1A18] px-6 lg:px-10 py-20 md:py-28">
         <div className="mx-auto max-w-2xl">
           <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6">The Ask</p>
