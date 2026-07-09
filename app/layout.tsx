@@ -86,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable} h-full antialiased`}>
       <head>
+        <meta name="google-site-verification" content="RuSy1qBYn1jF514KfHduGq1Dj2hG9ziLx-8f_W376T0" />
         <link rel="preconnect" href="https://ik.imagekit.io" crossOrigin="" />
         <link rel="dns-prefetch" href="https://ik.imagekit.io" />
         <script
