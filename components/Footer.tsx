@@ -14,12 +14,6 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Social */}
-          <div className="space-y-2">
-            <a href="#" className="block text-xs uppercase tracking-widest text-white/50 hover:text-white transition-colors">Twitter</a>
-            <a href="#" className="block text-xs uppercase tracking-widest text-white/50 hover:text-white transition-colors">Nostr</a>
-          </div>
-
           {/* Nav */}
           <div className="space-y-2">
             <Link href="/about" className="block text-xs uppercase tracking-widest text-white/50 hover:text-white transition-colors">About</Link>
