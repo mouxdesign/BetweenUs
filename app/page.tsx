@@ -104,9 +104,6 @@ export default function HomePage() {
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white leading-tight mb-6 max-w-2xl" style={{ textTransform: 'none' }}>
             Made in the open, backed by teams who ship.
           </h2>
-          <p className="text-[#888884] text-base leading-relaxed mb-14 max-w-xl">
-            This research is being done in public by the Bitcoin Design Community. Everything we learn will be shared back with the ecosystem.
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
             {/* Bitcoin Design Community */}
