@@ -100,7 +100,7 @@ export default function HomePage() {
       {/* ── Built in Public ─────────────────────────────────────────────── */}
       <section className="bg-[#1A1A18] px-6 lg:px-10 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6">Built in public</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-white font-bold mb-6">Built in public</p>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white leading-tight mb-6 max-w-2xl" style={{ textTransform: 'none' }}>
             Made in the open, backed by teams who ship.
           </h2>
@@ -111,7 +111,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
             {/* Bitcoin Design Community */}
             <div className="bg-[#1F1F1D] p-10 flex flex-col gap-8">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">Built in public by</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-white font-bold">Built in public by</p>
               <Image
                 src="https://ik.imagekit.io/betweenus/Bitcoin%20Design%20Community%20logo.png"
                 alt="Bitcoin Design Community"
@@ -127,7 +127,7 @@ export default function HomePage() {
 
             {/* Spiral */}
             <div className="bg-[#1F1F1D] p-10 flex flex-col gap-8">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">Supported by</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-white font-bold">Supported by</p>
               <Image
                 src="https://ik.imagekit.io/betweenus/spiral-logo.svg"
                 alt="Spiral"
