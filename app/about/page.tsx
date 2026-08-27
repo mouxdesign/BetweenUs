@@ -76,7 +76,7 @@ export default function AboutPage() {
             {[
               { name: "Mogashni", role: "Project Lead", href: "https://www.moux.design/" },
               { name: "Miro", role: "Product Leader", href: "https://miroremias.com/" },
-              { name: "Desi", role: "Lead Storyteller", href: "https://microcosma-studio.framer.website/" },
+              { name: "Desi", role: "Writer & Storyteller", href: "https://microcosma-studio.framer.website/" },
               { name: "Sanyam", role: "Design", href: "https://x.com/sanyummmmm" },
             ].map((person) => (
               <a
