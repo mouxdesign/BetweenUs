@@ -107,7 +107,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
             {/* Bitcoin Design Community */}
-            <div className="bg-[#1F1F1D] p-10 flex flex-col gap-8">
+            <a href="https://bitcoin.design/" target="_blank" rel="noopener noreferrer" className="bg-[#1F1F1D] p-10 flex flex-col gap-8 hover:bg-[#252523] transition-colors">
               <p className="text-[10px] uppercase tracking-[0.2em] text-white font-bold">Built in public by</p>
               <Image
                 src="https://ik.imagekit.io/betweenus/Bitcoin%20Design%20Community%20logo.png"
@@ -120,10 +120,10 @@ export default function HomePage() {
                 <p className="text-white font-bold text-lg mb-2">Bitcoin Design Community</p>
                 <p className="text-[#888884] text-sm leading-relaxed">An open community stewarding the Bitcoin Design Guide as a shared resource for builders.</p>
               </div>
-            </div>
+            </a>
 
             {/* Spiral */}
-            <div className="bg-[#1F1F1D] p-10 flex flex-col gap-8">
+            <a href="https://spiral.xyz/about/" target="_blank" rel="noopener noreferrer" className="bg-[#1F1F1D] p-10 flex flex-col gap-8 hover:bg-[#252523] transition-colors">
               <p className="text-[10px] uppercase tracking-[0.2em] text-white font-bold">Supported by</p>
               <Image
                 src="https://ik.imagekit.io/betweenus/spiral-logo.svg"
@@ -136,7 +136,7 @@ export default function HomePage() {
                 <p className="text-white font-bold text-lg mb-2">Spiral</p>
                 <p className="text-[#888884] text-sm leading-relaxed">Spiral builds and funds public goods that make money and intelligence more open, secure, and accessible.</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
