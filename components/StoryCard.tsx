@@ -25,6 +25,7 @@ export default function StoryCard({
             fill
             sizes={sizes}
             className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={post.coverPosition ? { objectPosition: post.coverPosition } : undefined}
           />
         </div>
         {post.pullQuote && (
