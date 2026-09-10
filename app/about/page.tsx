@@ -72,7 +72,7 @@ export default function AboutPage() {
             It is being built by the following people who have contributed in the following ways.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[#E8E5DE] mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-px bg-[#E8E5DE] mb-20">
             {[
               { name: "Mogashni", role: "Project Lead", href: "https://www.moux.design/" },
               { name: "Miro", role: "Product Leader", href: "https://miroremias.com/" },
