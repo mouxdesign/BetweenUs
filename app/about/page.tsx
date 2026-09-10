@@ -78,6 +78,7 @@ export default function AboutPage() {
               { name: "Miro", role: "Product Leader", href: "https://miroremias.com/" },
               { name: "Desi", role: "Writer & Storyteller", href: "https://microcosma-studio.framer.website/" },
               { name: "Sanyam", role: "Design", href: "https://x.com/sanyummmmm" },
+              { name: "Ariel", role: "UX & Strategy", href: "https://www.goldrel.com/" },
             ].map((person) => (
               <a
                 key={person.name}
