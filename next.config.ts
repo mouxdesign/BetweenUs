@@ -42,6 +42,18 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: "/story/brenda-achieng", destination: "/story/brenda", permanent: true },
+      { source: "/story/erik-alvarez",   destination: "/story/erik",    permanent: true },
+      { source: "/story/joyce-koigi",    destination: "/story/joyce",   permanent: true },
+      { source: "/story/ropafadzo-tambara", destination: "/story/ropafadzo", permanent: true },
+      { source: "/story/rose-ngeru",     destination: "/story/rose",    permanent: true },
+      { source: "/story/sabina-waithira", destination: "/story/sabina", permanent: true },
+      { source: "/story/vidushi-singh",  destination: "/story/vidushi", permanent: true },
+      { source: "/story/wandia-mugo",    destination: "/story/wandia",  permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
