@@ -7,7 +7,7 @@ export function getImageKitUrl(
   const { width, height, quality = 80 } = options ?? {};
   const transforms: string[] = [`q-${quality}`, "f-auto"];
   if (width) transforms.push(`w-${width}`);
-  if (height) transforms.push(`h-${height}`, "c-at_max");
+  if (height) transforms.push(`h-${height}`, "fo-auto", "c-maintain_ratio");
 
   const trStr = `tr:${transforms.join(",")}`;
 

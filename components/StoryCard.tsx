@@ -20,7 +20,7 @@ export default function StoryCard({
       <Link href={`/story/${post.slug}`} className="block">
         <div className="relative aspect-square bg-[#E8E5DE] overflow-hidden mb-5">
           <Image
-            src={getImageKitUrl(post.coverImage, { width: 600, height: 600 })}
+            src={getImageKitUrl(post.coverImage, { width: 600 })}
             alt={`${post.author} — ${post.title}`}
             fill
             sizes={sizes}
